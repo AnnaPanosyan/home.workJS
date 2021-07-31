@@ -9,17 +9,19 @@ function countOfMember(arr,e){
     let count = 0;
     arr.sort();
     for(let i = 0; i < arr.length; i++){
-        if(e===arr[i]){
+        if(e === arr[i]){
             count++
         }
     }
 return count
 }
+
 let length = prompt('Enter a number');
 let arr = [];
 for(let i = 0; i < length; i++){
     arr[i] = prompt("Please enter a number");
 }
+
 let count = 1;
 let count1;
 arr.sort();
