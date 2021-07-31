@@ -25,11 +25,11 @@ let count1;
 arr.sort();
 for(let i = 0; i < length; i++){
     if(!(arr.includes(arr[i],i+1))){
-         count=1
+         count = 1
          console.log(arr[i] + ":" + div(count,length))
      }else{
           count1 = countOfMember(arr,arr[i])
-          i=i+count1-1
+          i = i + count1 - 1
           console.log(arr[i] + ":" + div(count1,length))
     }
 }
