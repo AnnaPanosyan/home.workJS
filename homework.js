@@ -33,3 +33,25 @@ for(let i = 0; i < length; i++){
           console.log(arr[i] + ":" + div(count1,length))
     }
 }
+
+// task2
+// Write a function that accepts a string(a sentence) as a parameter and finds the longest
+// word within the string․ If there are several words which are the longest ones, print the
+// last word(words can be separated by space, comma or hyphen).
+
+let string = 'Which would be worse to live as a monster or to die as a good man?'
+function gerLongestWord(str){
+    let maxLength = 0;
+    let arr = [];
+    let longestWord = '';
+    arr = str.split(' ');
+     for (let i = 0; i < arr.length; i++){
+         if (arr[i].length >= maxLength){ 
+            maxLength = arr[i].length;
+            longestWord = arr[i];
+            }  
+      }
+return longestWord
+}
+console.log(gerLongestWord(string))
+    
