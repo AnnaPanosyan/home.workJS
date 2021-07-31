@@ -54,4 +54,30 @@ function gerLongestWord(str){
 return longestWord
 }
 console.log(gerLongestWord(string))
+
+// task4
+// Write a function to compute a new string from the given one by moving the first char to
+// come after the next two chars, so &quot;abc&quot; yields &quot;bca&quot;. Repeat this process for each
+// subsequent group of 3 chars. Ignore any group of fewer than 3 chars at the end.
+
+function move(str){
+    let result = '';
+    let length;
+    let div3 = str.length  %  3  ===  0
+    if(div3){
+        length = str.length
+    }else{
+        length = str.length - str.length % 3
+    }
+    for(let i = 0; i < length; i++){
+        if(!div3){
+            result = result + (str.slice(i+1,i+3) + str[i]) + str.slice(-str.length % 3)
+            i = i + 2;
+        }else{
+            result = result + (str.slice(i+1,i+3) + str[i])
+            i = i + 2;
+        }
+    }
+return result
+}
     
