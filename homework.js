@@ -5,39 +5,31 @@
 function div(a,b){
     return a/b
 }
-
-function countOfMember(arr){
-let count = 1
+function countOfMember(arr,e){
+    let count = 0;
+    arr.sort();
     for(let i = 0; i < arr.length; i++){
-        for(let j = 1; j < arr.length; j++){
-           if(arr[i]===arr[j]){
-            i++;
+        if(e===arr[i]){
             count++
-           }
         }
     }
 return count
 }
-
-let arr = [1,2,3]
-let length=arr.length
+let length = prompt('Enter a number');
+let arr = [];
+for(let i = 0; i < length; i++){
+    arr[i] = prompt("Please enter a number");
+}
 let count = 1;
-let count1
-let ar=[]
+let count1;
+arr.sort();
 for(let i = 0; i < length; i++){
     if(!(arr.includes(arr[i],i+1))){
          count=1
+         console.log(arr[i] + ":" + div(count,length))
      }else{
-         count1 = countOfMember(arr,arr[i])
+          count1 = countOfMember(arr,arr[i])
+          i=i+count1-1
+          console.log(arr[i] + ":" + div(count1,length))
     }
-}
-arr.sort()
-for(let i=0; i<arr.length; i++){
-    if(!(arr.includes(arr[i],i+1))){
-    ar.push(arr[i])
-    console.log(ar[i] + ":" + div(count,length))
-}else{
-    continue
-    console.log(ar[i] + ":" + div(count1,length))
-}
 }
