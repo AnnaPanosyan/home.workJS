@@ -16,23 +16,23 @@ function countOfMember(arr,e){
 return count
 }
 
-let length = prompt('Enter a number');
+let length = prompt('Please enter array length.');
 let arr = [];
 for(let i = 0; i < length; i++){
     arr[i] = prompt("Please enter a number");
 }
 
-let count = 1;
-let count1;
+let count;
+let count1 = 1;
 arr.sort();
 for(let i = 0; i < length; i++){
     if(!(arr.includes(arr[i],i+1))){
-         count = 1
-         console.log(arr[i] + ":" + div(count,length))
+         count1 = 1
+         console.log(arr[i] + ":" + div(count1,length))
      }else{
-          count1 = countOfMember(arr,arr[i])
-          i = i + count1 - 1
-          console.log(arr[i] + ":" + div(count1,length))
+          count = countOfMember(arr,arr[i])
+          i = i + count - 1
+          console.log(arr[i] + ":" + div(count,length))
     }
 }
 
@@ -42,7 +42,7 @@ for(let i = 0; i < length; i++){
 // last word(words can be separated by space, comma or hyphen).
 
 let string = 'Which would be worse to live as a monster or to die as a good man?'
-function gerLongestWord(str){
+function getLongestWord(str){
     let maxLength = 0;
     let arr = [];
     let longestWord = '';
@@ -55,7 +55,7 @@ function gerLongestWord(str){
       }
 return longestWord
 }
-console.log(gerLongestWord(string))
+console.log(getLongestWord(string))
 
 // task4
 // Write a function to compute a new string from the given one by moving the first char to
