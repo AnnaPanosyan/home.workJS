@@ -7,7 +7,7 @@ function div(a,b){
 }
 function countOfMember(arr,e){
     let count = 0;
-    arr.sort();
+    arr.sort((a, b) => a - b);
     for(let i = 0; i < arr.length; i++){
         if(e === arr[i]){
             count++
@@ -24,7 +24,7 @@ for(let i = 0; i < length; i++){
 
 let count;
 let count1 = 1;
-arr.sort();
+arr.sort((a, b) => a - b);
 for(let i = 0; i < length; i++){
     if(!(arr.includes(arr[i],i+1))){
          count1 = 1
@@ -46,6 +46,8 @@ function getLongestWord(str){
     let maxLength = 0;
     let arr = [];
     let longestWord = '';
+    str = str.replace(',',' ');
+    str = str.replace('-', ' ');
     arr = str.split(' ');
      for (let i = 0; i < arr.length; i++){
          if (arr[i].length >= maxLength){ 
