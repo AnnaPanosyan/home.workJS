@@ -47,7 +47,7 @@ function getLongestWord(str){
     let arr = [];
     let longestWord = '';
     str = str.replace(',',' ');
-    str = str.replace('-', ' ');
+    str = str.replace('-',' ');
     arr = str.split(' ');
      for (let i = 0; i < arr.length; i++){
          if (arr[i].length >= maxLength){ 
