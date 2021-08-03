@@ -59,6 +59,36 @@ return longestWord
 }
 console.log(getLongestWord(string))
 
+
+// task3
+// Write a function to find longest substring in a given a string without repeating characters
+// except space character.
+// If there are several, return the last one. Consider that all letters are lowercase.
+
+let string = prompt("Enter sentence.")
+function findLongestSubstring(string) {
+    let temp = "";
+    let result = "";
+    let str = string.toLowerCase()
+    for (i = 0; i < str.length; i++) {
+        for (j = i; j < str.length; j++) {
+            if (!(temp.includes(str[j]))) {
+                temp += str[j];
+            } else if(str[j] === ' '){
+                temp += str[j];
+            }else{
+                break;
+            }
+        }
+        temp = temp.trim()
+        if (result.length < temp.length) {
+            result = temp;
+        }
+            temp = "";
+    }
+return result;
+}
+
 // task4
 // Write a function to compute a new string from the given one by moving the first char to
 // come after the next two chars, so &quot;abc&quot; yields &quot;bca&quot;. Repeat this process for each
@@ -84,4 +114,8 @@ function move(str){
     }
 return result
 }
+
+// task5
+// Write a JavaScript function to get all possible subsets of length 3 of the given array.
+// Assume that all elements in the array are unique.
     
