@@ -65,16 +65,14 @@ console.log(getLongestWord(string))
 // except space character.
 // If there are several, return the last one. Consider that all letters are lowercase.
 
-let string = prompt("Enter sentence.")
+let str = "there are no two words in the english language more harmful than 'good job'."
 function findLongestSubstring(string) {
     let temp = "";
     let result = "";
     let str = string.toLowerCase()
     for (i = 0; i < str.length; i++) {
         for (j = i; j < str.length; j++) {
-            if (!(temp.includes(str[j]))) {
-                temp += str[j];
-            } else if(str[j] === ' '){
+            if ((!(temp.includes(str[j]))) || str[j] === ' ') {
                 temp += str[j];
             }else{
                 break;
@@ -88,6 +86,7 @@ function findLongestSubstring(string) {
     }
 return result;
 }
+console.log(findLongestSubstring(str));
 
 // task4
 // Write a function to compute a new string from the given one by moving the first char to
